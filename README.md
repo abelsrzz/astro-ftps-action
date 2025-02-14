@@ -1,20 +1,20 @@
 # Deploy Astro to FTP
 
-Esta acción de GitHub construye un proyecto Astro y lo sube a un servidor FTP (con o sin SSL).
+This GitHub action builds an Astro project and uploads it to an FTP server (with or without SSL).
 
 ## Inputs
 
-| Nombre       | Descripción                        | Requerido | Predeterminado   |
+| Name         | Description                        | Required  | Default          |
 |--------------|------------------------------------|-----------|------------------|
-| `ftp_host`   | Servidor FTP                       | Sí        |                  |
-| `ftp_user`   | Usuario FTP                        | Sí        |                  |
-| `ftp_pass`   | Contraseña FTP                     | Sí        |                  |
-| `local_dir`  | Directorio local a subir           | No        | `./dist`         |
-| `remote_dir` | Directorio remoto para subir archivos | Sí        | `/public_html`   |
-| `use_ssl`    | Habilitar SSL (true/false)         | No        | `false`          |
-| `force_ssl`  | Forzar uso de SSL                  | No        | `false`          |
+| `ftp_host`   | FTP Server                         | Yes       |                  |
+| `ftp_user`   | FTP User                           | Yes       |                  |
+| `ftp_pass`   | FTP Password                       | Yes       |                  |
+| `local_dir`  | Local directory to upload          | No        | `./dist`         |
+| `remote_dir` | Remote directory to upload files   | Yes       | `/public_html`   |
+| `use_ssl`    | Enable SSL (true/false)            | No        | `false`          |
+| `force_ssl`  | Force SSL usage                    | No        | `false`          |
 
-## Ejemplo de uso
+## Usage example
 
 ```yaml
 name: Auto Build Astro Page
