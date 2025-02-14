@@ -1,0 +1,46 @@
+name: 'Deploy Astro to FTP'
+description: 'Builds Astro and uploads it to an FTP server (with or without SSL)'
+author: '@abelsrzz'
+
+inputs:
+  ftp_host:
+    description: 'FTP Server'
+    required: true
+  ftp_user:
+    description: 'FTP User'
+    required: true
+  ftp_pass:
+    description: 'FTP Password'
+    required: true
+  local_dir:
+    description: 'Local dir to be uploaded'
+    required: false
+    default: './dist'
+  remote_dir:
+    description: 'Remote directory to upload files'
+    required: true
+    default: '/public_html'
+  use_ssl:
+    description: 'Enable SSL (true/false)'
+    required: false
+    default: 'false'
+  force_ssl:
+    description: 'Force SSL use'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+  env:
+    FTP_HOST: ${{ inputs.ftp_host }}
+    FTP_USER: ${{ inputs.ftp_user }}
+    FTP_PASS: ${{ inputs.ftp_pass }}
+    LOCAL_DIR: ${{ inputs.local_dir }}
+    REMOTE_DIR: ${{ inputs.remote_dir }}
+    FORCE_SSL: ${{ inputs.force_ssl }}
+
+branding:
+  color: 'orange'
+  icon: 'upload-cloud'
