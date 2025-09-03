@@ -35,12 +35,12 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Build and upload to FTP server
-        uses: abelsrzz/astro-ftps-action@v1.0.0
+        uses: abelsrzz/astro-ftps-action@v1.0.3
 
         with:
           ftp_host: ${{ secrets.FTP_SERVER }}
           ftp_user: ${{ secrets.FTP_USERNAME }}
           ftp_pass: ${{ secrets.FTP_PASSWORD }}
           local_dir: ./dist
-          remote_dir: /suarezmuinho.com/src
+          remote_dir: /someweb.com/src
           force_ssl: true
