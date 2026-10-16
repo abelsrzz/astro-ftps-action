@@ -41,6 +41,7 @@ runs:
     REMOTE_DIR: ${{ inputs.remote_dir }}
     FORCE_SSL: ${{ inputs.force_ssl }}
     TIMEOUT: ${{ inputs.timeout }}
+    MAX_RETRIES: ${{ inputs.maxretries }}
 
 branding:
   color: 'orange'
