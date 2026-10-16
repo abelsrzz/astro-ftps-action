@@ -19,7 +19,7 @@ lftp "$FTP_HOST" -u "$FTP_USER","$FTP_PASS" -e "
   set file:charset utf8;
   set ftp:passive-mode on;
   set net:timeout $TIMEOUT;
-  set net:max-retries 5;
+  set net:max-retries $MAX_RETRIES;
   mirror --reverse --verbose --dereference -x ^\.git/$ -X .gitignore $LOCAL_DIR $REMOTE_DIR;
   quit"
 
