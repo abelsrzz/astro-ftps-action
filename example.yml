@@ -26,6 +26,7 @@ jobs:
           ftp_host: ${{ secrets.FTP_SERVER }}
           ftp_user: ${{ secrets.FTP_USERNAME }}
           ftp_pass: ${{ secrets.FTP_PASSWORD }}
+          timeout: 30
           local_dir: ./dist
           remote_dir: /webpage.com/src
           force_ssl: true
